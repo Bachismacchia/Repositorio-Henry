@@ -8,5 +8,29 @@
 </head>
 <body>
     <h2>Calculadora en JS</h2>
+    <input type="number" id="primer_valor" placeholder="primer_valor"/>
+    <input type="text" id="operador" placeholder="operador"/>
+    <input type="number" id="segundo_valor" placeholder="segundo_valor"/>
+    <button type="button" id="btton_equal">=</button>
+    <span id="render_resul">00</span>
+    <script type="text/javascript">
+        var render_resul = document.getElementById("render_result");
+        var btton_equal = document.getElementById("btton_equal");
+        var primer_valor;
+        var segundo_valor;
+        var operador;
+        var result;
+        function operaciones(){
+            primer_valor = document.getElementById("primer_valor").value;
+            operador = document.getElementById("operador").value;
+            segundo_valor = document.getElementById("segundo_valor");
+            if (operador === "+") result = Number(primer_valor) + Number(segundo_valor);
+            if (operador === "-") result = Number(primer_valor) - Number(segundo_valor);
+            if (operador === "*") result = Number(primer_valor) * Number(segundo_valor);
+            if (operador === "/") result = Number(primer_valor) / Number(segundo_valor);
+            return render_resul.innerHTML = result;
+        }
+        btton_equal.addEventListener("click", operaciones);
+    </script>
 </body>
 </html>
